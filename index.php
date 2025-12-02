@@ -31,24 +31,29 @@ require_once("obtener_productos.php");
         <span class="block"><?php echo $_SESSION['error']; ?></span>
       </div>
     <?php } ?>
-    <section class="d-flex align-items-center flex-column bg-white p-4 mb-3" style="width: 100%;">
-      <h2>Agregar nuevo producto</h2>
-      <button class="btn btn-primary align-self-end mb-3" id="btnOllama">Generar producto IA</button>
-      <form action="agregar_producto.php" class="" method="POST">
-        <div class="row">
-          <div class="col-6 mb-3">
-            <input type="text" placeholder="Nombre producto" name="nombre_producto" class="form-control">
+    <div class="d-flex mb-3 column-gap-3">
+      <section class="d-flex align-items-center flex-column bg-white p-4 flex-grow-1">
+        <h2>Agregar nuevo producto</h2>
+        <form action="agregar_producto.php" class="" method="POST">
+          <div class="row">
+            <div class="col-6 mb-3">
+              <input type="text" placeholder="Nombre producto" name="nombre_producto" class="form-control">
+            </div>
+            <div class="col-6 mb-3">
+              <input type="number" class="form-control" placeholder="Precio" name="precio_producto">
+            </div>
+            <div class="col-12 mb-3">
+              <textarea class="form-control" id="" name="descripcion_producto"></textarea>
+            </div>
+            <button class="btn btn-success" type="submit">Guardar</button>
           </div>
-          <div class="col-6 mb-3">
-            <input type="number" class="form-control" placeholder="Precio" name="precio_producto">
-          </div>
-          <div class="col-12 mb-3">
-            <textarea class="form-control" id="" name="descripcion_producto"></textarea>
-          </div>
-          <button class="btn btn-success" type="submit">Guardar</button>
-        </div>
-      </form>
-    </section>
+        </form>
+      </section>
+      <section class="d-flex flex-column bg-white p-4 row-gap-3">
+        <button class="btn btn-primary" id="btnOllama">Generar producto IA</button>
+        <a href="carga_masiva.php" class="btn btn-warning" id="btnMasiva">Carga Masiva</a>
+      </section>
+    </div>
     <section class="bg-white p-4">
       <table class="table table-striped table-hover">
         <thead>
